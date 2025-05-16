@@ -240,7 +240,9 @@ bool test_empty_stack_operations(Stack* stack) {
     if(!stack->empty()) return true;
 
     stack->pop();
-    if(stack->empty()) return true; // Placeholder
+    if(stack->empty()) return true; 
+    
+    return stack->pop()==-1 && stack->top()==-1// Placeholder
 }
 
 // TODO: Implement test for ArrayStack resizing
