@@ -165,16 +165,23 @@ bool test_size(Stack* stack) {
 
 
     stack->push(10);
+    if(stack->size()!=1) return false;
+    
     stack->push(20);
     stack->push(30);
 
-    return stack->size()==3;
+    if(stack->size()!=3) return false;
 
     stack->pop();
-    return stack->size()==2;
-
+    if(stack->size()!=2) return false;
+    
+    int top_element=stack->top();
+    if(stack->size()!=2) return false; 
+    
     stack->pop();
-    return stack->size()==1;//placeholder
+    if(stack->size()!=1) return false;
+    
+    return true;//placeholder
    
  
 }
@@ -204,6 +211,7 @@ bool test_clear(Stack* stack) {
     stack->push(20);
     stack->push(30);
     stack->push(40);
+    
 
     stack->clear();
 
@@ -218,7 +226,10 @@ bool test_multiple_push_pop(Stack* stack) {
     for(int i=0;i<10;i++){
         stack->push(i);
     }
-
+    
+    int top=stack->top();
+    if(top!=9) return false;
+    
     for(int i=9;i>=0;i--){
         if(stack->pop()!=i) return false;
     }
@@ -264,7 +275,7 @@ bool test_stress(Stack* stack) {
     }
 
     int top=stack->top();
-    return top==num_test-1 && stack->size()==num_test;
+    if(top!=num_test-1 || stack->size()==num_test) return false;
 
     for(int i=num_test-1;i>=0;i--){
         if(stack->pop()!=i)return false;
