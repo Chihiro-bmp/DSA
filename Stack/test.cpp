@@ -275,7 +275,7 @@ bool test_stress(Stack* stack) {
     }
 
     int top=stack->top();
-    if(top!=num_test-1 || stack->size()==num_test) return false;
+    if(top!=num_test-1 || stack->size()!=num_test) return false;
 
     for(int i=num_test-1;i>=0;i--){
         if(stack->pop()!=i)return false;
