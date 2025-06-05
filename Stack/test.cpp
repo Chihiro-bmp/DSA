@@ -3,8 +3,8 @@
 #include <vector>
 #include <functional>
 #include "stack.h"
-#include "arraystack.cpp"
-#include "liststack.cpp"
+
+
 /**
  * A test case structure to hold test metadata and function
  */
@@ -259,9 +259,45 @@ bool test_empty_stack_operations(Stack* stack) {
 // TODO: Implement test for ArrayStack resizing
 bool test_array_resizing(Stack* stack) {
     // TODO: Test if ArrayStack properly resizes when capacity is reached
+    const int test_size = 100;
+    stack->clear();
+    bool case_one=false;
+    bool case_two=false;
+
+    for(int i=0;i<test_size;i++){
+        stack->push(i);
+
+        if(stack->size()!=i+1) return false;
+
+        if(stack->top()!=i) return false;
+    }
+
+    if(stack->size()==test_size && stack->top()==test_size-1){
+
+        case_one=true;
+
+    } 
+
+    for(int i=test_size-1;i>=test_size/2;i--){
+
+        if(stack->top()!=i){
+            return false;
+        }
+
+        stack->pop();
+
+        if(stack->size()!=i) return false;
+
+    }
+
+    if(stack->size()==test_size/2 && stack->top()==test_size/2-1){
+
+        case_two=true;
+
+    }
 
 
-    return false; // Placeholder
+    return case_one && case_two;; // Placeholder
 }
 
 // TODO: Implement test for large number of operations

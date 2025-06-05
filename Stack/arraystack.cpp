@@ -36,7 +36,7 @@ int ArrayStack::pop() {
     // TODO: If the array is less than 25% full, resize it to half its current capacity
     // TODO: Return the popped element
     if(empty()){
-        std::cout<<"Stack is Empty"<<std::endl;
+       // std::cout<<"Stack is Empty"<<std::endl;
         return -1;
     }
     
@@ -69,7 +69,7 @@ int ArrayStack::top() const {
     // TODO: Return the element at the top of the stack without removing it
 
     if(empty()){
-        std::cout<<"Stack is Empty. No Top element found."<<std::endl;
+        //std::cout<<"Stack is Empty. No Top element found."<<std::endl;
         return -1;
     }
 

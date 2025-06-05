@@ -42,7 +42,7 @@ int ListStack::pop() {
     // TODO: Return the stored data
 
     if(empty()){
-        std::cout<<"Stack is empty"<<std::endl;
+        //std::cout<<"Stack is empty"<<std::endl;
         return -1;
     }
 
@@ -88,7 +88,7 @@ int ListStack::top() const {
     // TODO: Return the data from the head node without removing it
 
     if(empty()){
-        std::cout<<"Stack is empty. No top element available."<<std::endl;
+        //std::cout<<"Stack is empty. No top element available."<<std::endl;
         return -1;
     }
 
