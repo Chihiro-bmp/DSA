@@ -139,6 +139,11 @@ int main()
                         Q->enqueue(check);
                     }
                 }
+              
+                if(length==Q->size()){
+
+                    cout<<"Error! Patient: "<<id<<"not found."<<endl;
+                }
             }
 
             else{
@@ -165,6 +170,11 @@ int main()
                     }
                 }
 
+                if(length1==Q1->size() && length2==Q2->size()){
+
+                    cout<<"Error! Patient: "<<id<<"not found."<<endl;
+                }
+
             }
         }
 
@@ -178,35 +188,25 @@ int main()
             }
             
             else{
-
-                int length1=Q1->size();
-                int length2=Q2->size();
-
-                int* temp=new int[length1+length2];
-                int idx=0;
-
+                
                 while(!Q1->empty() && !Q2->empty()){
 
                     if(Timestamps[Q1->front()]< Timestamps[Q2->front()]){
 
-                        temp[idx++]=Q1->dequeue();
+                        Q->enqueue(Q1->dequeue());
                     }else{
-                        temp[idx++]=Q2->dequeue();
+                       Q->enqueue(Q2->dequeue());
                     }
                 }
 
                 while(!Q1->empty()){
-                    temp[idx++]=Q1->dequeue();
+                   Q->enqueue(Q1->dequeue());
                 }
                 while(!Q2->empty()){
-                    temp[idx++]=Q2->dequeue();
+                   Q->enqueue(Q2->dequeue());
                 }
 
-                for(int i=0;i<length1+length2;i++){
-                    Q->enqueue(temp[i]);
-                }
-
-                delete[] temp;
+                             
                 merged=true;
             }
 
@@ -222,26 +222,21 @@ int main()
 
             }else{
 
-                int length=Q->size();
-                int*temp=new int[length];
+               bool flag=true;
 
-                for(int i=0;i<length;i++){
+               while(!Q->empty()){
 
-                    temp[i]=Q->dequeue();
+                if(flag){
+
+                    Q1->enqueue(Q->dequeue());
+                }else{
+                    Q2->enqueue(Q->dequeue());
                 }
 
-                for(int i=0;i<length; i++){
+                flag=!flag;
+               }
 
-                    if(i%2==0){
-                        Q1->enqueue(temp[i]);
-                    }else{
-                        Q2->enqueue(temp[i]);
-                    }
-                }
-
-                delete[] temp;
-                merged=false;
-
+               merged =false;
             }
         } 
         else if(operation_type==5){
@@ -249,7 +244,7 @@ int main()
             //cout<<"Operation "<<i<<" (Departure):"<<endl;
             if(merged){
 
-                cout<<"Operation "<<i<<" (Departure):"<<endl;
+                cout<<"Operation "<<i<<" (Departure): "<<endl;
                 Q->dequeue();
             }else{
                 if(!Q1->empty() && !Q2->empty()){
@@ -267,12 +262,12 @@ int main()
 
                 }else if(!Q1->empty()){
 
-                    cout<<"Operation "<<i<<" (Departure):"<<endl;
+                    cout<<"Operation "<<i<<" (Departure): "<<endl;
                     Q1->dequeue();
 
                 }else if(!Q2->empty()){
 
-                    cout<<"Operation "<<i<<" (Departure):"<<endl;
+                    cout<<"Operation "<<i<<" (Departure): "<<endl;
                     Q2->dequeue();
 
                 }else{
@@ -282,9 +277,9 @@ int main()
         }
 
 
-        cout<<"Q1:"<<Q1->toString()<<endl;
-        cout<<"Q2:"<<Q2->toString()<<endl;
-        cout<<"Q:"<<Q->toString()<<endl;
+        cout<<"Q1: "<<Q1->toString()<<endl;
+        cout<<"Q2: "<<Q2->toString()<<endl;
+        cout<<"Q : "<<Q->toString()<<endl;
 
     
         // After each operation, we will check the queue's size and capacity

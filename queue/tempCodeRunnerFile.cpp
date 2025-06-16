@@ -1,2 +1,1 @@
-
-using namespace std;
+g++ randomtester.cpp arrayqueue.cpp listqueue.cpp

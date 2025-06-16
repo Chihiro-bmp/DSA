@@ -57,7 +57,7 @@ int ArrayQueue::dequeue()
     // TODO: Return the dequeued element
 
     //resize(shrink)
-    if(size()>2 && size()<=capacity/4){
+    if(capacity>2 && size()<capacity/4){
         resize(capacity/2);
     }
 

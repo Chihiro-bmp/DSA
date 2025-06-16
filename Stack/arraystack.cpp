@@ -2,7 +2,7 @@
 #include <iostream>
 
 // Constructor implementation
-ArrayStack::ArrayStack(int initial_capacity) {
+ArrayStack::ArrayStack(int initial_capacity=10) {
     // TODO: Initialize data members (data, capacity, current_size)
     // TODO: Allocate memory for the array with the specified initial capacity
 
