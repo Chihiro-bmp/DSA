@@ -37,12 +37,12 @@ int main(int argc, char **argv) {
 
                 if(bst->insert(val,val)){
 
-                    cout<<"Key "<<val<<" inserted into BST, BST(Default): ";
+                    cout<<"Key "<<val<<" inserted into BST, BST (Default): ";
                     bst->print('D');
 
                 }else{
 
-                    cout<<"Insertion failed! Key "<< val<<" already exists in BST, BST(Default): ";
+                    cout<<"Insertion failed! Key "<< val<<" already exists in BST, BST (Default): ";
                     bst->print('D');
 
                 }
@@ -55,11 +55,11 @@ int main(int argc, char **argv) {
 
              if(bst->remove(val)){
 
-                cout<<"Key "<<val<<" removed from BST, BST(Default): ";
+                cout<<"Key "<<val<<" removed from BST, BST (Default): ";
                 bst->print('D');
              }else{
 
-                cout<<"Removal failed! key "<<val<<" not found in BST, BST(Default): ";
+                cout<<"Removal failed! Key "<<val<<" not found in BST, BST (Default): ";
                 bst->print('D');
              }
 
@@ -104,7 +104,7 @@ int main(int argc, char **argv) {
 
                 if(str[1]=='i'){
 
-                    cout<<"Minimal value: "<<bst->find_min()<<endl;
+                    cout<<"Minimum value: "<<bst->find_min()<<endl;
 
                 }else if(str[1]=='a'){
 

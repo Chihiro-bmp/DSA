@@ -65,9 +65,11 @@ int main(int argc, char **argv) {
     // Start your code here
     
     cout<<"Phil's words:"<<endl;
+    cout<<"BST (In-order): ";
     bst1->print('I');
 
     cout<<"Claire's words:"<<endl;
+    cout<<"BST (In-order): ";
     bst2->print('I');
 
     // End your code here
@@ -110,15 +112,39 @@ int main(int argc, char **argv) {
             claire=true;
         }
 
-       if(phil || claire){
+      
 
         if(phil){
             cout<<"Phil has "<<word<<"!"<<endl;
-        }else if(claire){
+        }
+         if(claire){
             cout<<"Claire has "<<word<<"!"<<endl;
         }
-       }
+        cout<<"\n";
 
+       if(!bst1->empty() && !bst2->empty()){
+
+        cout<<"Phil's remaining words:"<<endl;
+        cout<<"BST (In-order): ";
+        bst1->print('I');
+        cout<<"\n";
+
+        cout<<"Claire's remaining words:"<<endl;
+        cout<<"BST (In-order): ";
+        bst2->print('I');
+        cout<<'\n';
+
+       }else{
+
+            if(bst1->empty() && bst2->empty()){
+                cout<<"Tie!"<<endl;
+            }else if(bst1->empty()){
+                cout<<"Phil wins!"<<endl;
+            }else{
+                cout<<"Claire wins!"<<endl;
+            }
+            break;
+       }
        
 
         // End your code here
@@ -130,3 +156,6 @@ int main(int argc, char **argv) {
     delete bst2;
     return 0;
 }
+
+//g++ -std=c++11 task2.cpp -o task2
+//./task2 in_task2.txt > myout_task2.txt

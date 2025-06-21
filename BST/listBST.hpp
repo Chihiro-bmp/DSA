@@ -123,22 +123,22 @@ private:
             return root;
         }
 
-        bool isAvailable(Node* node, Key key)const{
+        // bool isAvailable(Node* node, Key key)const{
 
-          while(node!=NULL){
+        //   while(node!=NULL){
 
-             if(key==node->key){
-                return true;
-             }
-             else if(node->key > key){
-                node=node->left;
-             }else{
-                node=node->right;
-             }
-          }
+        //      if(key==node->key){
+        //         return true;
+        //      }
+        //      else if(node->key > key){
+        //         node=node->left;
+        //      }else{
+        //         node=node->right;
+        //      }
+        //   }
 
-          return false;
-        }
+        //   return false;
+        // }
 
         
         Node* getNode(Node* node, Key key)const{
@@ -174,7 +174,7 @@ private:
             return;
 
             printInOrder(root->left);
-            std::cout<<"(" <<root->key<<":"<<root->value<<" )"<<" ";
+            std::cout<<"(" <<root->key<<":"<<root->value<<")"<<" ";
             printInOrder(root->right);
         }
 
@@ -182,7 +182,7 @@ private:
 
             if(!root) return;
 
-            std:: cout<<"("<<root->key<<":"<<root->value<<")";
+            std:: cout<<"("<<root->key<<":"<<root->value<<")"<<" ";
             printPreOrder(root->left);
             printPreOrder(root->right);
 
