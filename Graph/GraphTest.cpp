@@ -7,8 +7,8 @@
 #include "AdjacencyMatrixGraph.h"
 
 // Toggle between implementations
-#define USE_ADJACENCY_LIST
-//#define USE_ADJACENCY_MATRIX
+//#define USE_ADJACENCY_LIST
+#define USE_ADJACENCY_MATRIX
 
 int main()
 {
@@ -25,7 +25,7 @@ int main()
     
     std::ifstream infile("input.txt");
    
-    freopen("output2.txt", "w", stdout);
+    freopen("output223.txt", "w", stdout);
     //std::cout << "TESTTTTTTTTTT";
     if (!infile.is_open())
     {
@@ -58,6 +58,7 @@ int main()
     std::cout << "Edge (5,6) exists? " << graph->CheckEdge(5, 6) <<std::endl;
     graph->RemoveEdge(5, 6);
     std::cout << "Edge (5,6) exists after removal? " << graph->CheckEdge(5, 6) <<std::endl;
+    std::cout<<std::endl;
 
     // Test CheckPath (connectivity)
     int pathTests[][2] = {{1, 15}, {10, 5}, {8, 14}, {1, 100}};
@@ -75,6 +76,7 @@ int main()
     
     std::cout << "Path exists from 1 to 7? " << (graph->CheckPath(1, 7) ? "Yes" : "No") <<std::endl;
     std::cout << "Edge (6,7) exists? " << graph->CheckEdge(6, 7) <<std::endl;
+    std::cout <<std::endl;
 
     // Add some edges/nodes dynamically
     std::cout << "Adding edge (7, 20)..."<<std::endl;

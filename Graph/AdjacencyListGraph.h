@@ -162,7 +162,7 @@ public:
 
         if(index1==-1 || index2 ==-1){
 
-            std::cout<<"Node missing"<<std::endl;
+           // std::cout<<"Node missing"<<std::endl;
             return false;
         }
 
@@ -220,7 +220,7 @@ public:
 
         if(index1==-1 || index2==-1){
 
-            std::cout<<"Node missing"<<std::endl;
+           // std::cout<<"Node missing"<<std::endl;
             return;
         }
 
@@ -303,6 +303,7 @@ public:
                     current=parent[current];
                 }
 
+                std::cout<<"Shortest path: ";
                 for(int i=length-1;i>=0;i--){
                     std::cout<<path[i]<<" ";
                 }
