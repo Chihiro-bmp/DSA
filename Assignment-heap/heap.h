@@ -1,6 +1,6 @@
 #include <vector>
 #include<iostream>
-using namespace std;
+
 
 class Heap{
 
@@ -85,7 +85,7 @@ class Heap{
         this->capacity=capacity;
     }
 
-    Heap( vector <int> &v){
+    Heap(std::vector<int> &v){
 
         index=v.size();
         capacity=v.size();
@@ -121,7 +121,7 @@ class Heap{
 
         if(index==0){
             
-            cout<<"Heap is empty"<<endl;
+           // std::cout<<"Heap is empty"<<std::endl;
             return -1;
         }
 
@@ -136,7 +136,7 @@ class Heap{
     void deleteKey(){
 
         if(index==0){
-            cout<<"Heap is empty"<<endl;
+           // std::cout<<"Heap is empty"<<std::endl;
             return;
         }
 
