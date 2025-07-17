@@ -99,6 +99,8 @@ public:
      */
     virtual void print(char traversal_type = 'D') const = 0;
 
+    virtual int height() const =0;
+
 };
 
 #endif // BST_H

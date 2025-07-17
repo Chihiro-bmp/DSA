@@ -134,6 +134,10 @@ int main(int argc, char **argv) {
 
                 break;
             
+            case 'H':
+                 cout<<"Height: "<<bst->height()<<endl;
+
+                 break;
             default:
                 cerr<< "Unknown command: "<<c<<endl;
 

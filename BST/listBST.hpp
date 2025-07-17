@@ -225,6 +225,26 @@ private:
             std::cout<<")";
 
         }
+
+        int max(int& a , int& b )const{
+
+            if(a>b) return a;
+
+            else{
+                return b;
+            }
+        }
+
+        int heightHelper(Node* root)const{
+            
+        if(!root) 
+        return 0;
+
+        int l=heightHelper(root->left);
+        int r=heightHelper(root->right);
+
+        return 1+max(l,r);
+        }
     // End your private helper functions here
 
 public:
@@ -402,6 +422,12 @@ public:
         }
         
         std::cout<<std::endl;
+    }
+
+    int height() const override{
+
+        return heightHelper(root);
+
     }
     
 };
