@@ -28,8 +28,8 @@ int main(){
             if(seats[i]==0){
 
                 
-                bool left=(i>start && (seats[i-1]==1 || seats[i-1]==2));
-                bool right=(i+1<end && seats[i+1]==2);
+                bool left=(i>start && (seats[i-1]==1 || seats[i-1]==2)); //1 and 2 both block right student
+                bool right=(i+1<end && seats[i+1]==2); // 2 blocks left student
 
                 if(!left && !right){
                     availableSeats++;
